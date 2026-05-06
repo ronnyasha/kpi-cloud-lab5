@@ -10,10 +10,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: HTML Hint (Linter)
-        uses: htmlhint/htmlhint-action@v2
+
+      - name: HTML Hint
+        uses: htmlhint/action-htmlhint@v2
         with:
-          rules: "tag-pair=true;attr-lowercase=true"
+          base_dir: .
 
   build_and_push:
     needs: lint
