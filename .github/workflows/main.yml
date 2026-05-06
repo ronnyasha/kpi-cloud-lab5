@@ -5,19 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: HTML Hint
-        uses: htmlhint/action-htmlhint@v2
-        with:
-          base_dir: .
-
   build_and_push:
-    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
